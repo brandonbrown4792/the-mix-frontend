@@ -60,6 +60,7 @@ function loginFetch(loginInfo) {
       else {
         localStorage.setItem("user_id", `${data.id}`);
         window.alert("Welcome to Cocktail Picker");
+        document.querySelector('#logged-in-message').innerText = `You are logged in as: ${loginInfo.email}`;
         clearContainerContents(document.querySelector('#detail'));
       }
     });
@@ -68,26 +69,17 @@ function loginFetch(loginInfo) {
 function logout() {
   let logoutBtn = document.querySelector("#logout");
   logoutBtn.addEventListener("click", function () {
-    createLogOut();
+    userLogout();
   });
 }
 
-function createLogOut() {
-  let detailsDiv = document.querySelector("#detail");
-  detailsDiv.innerHTML = "";
-
-  let logoutMessage = document.createElement("h2");
-  logoutMessage.innerText = "See you next time!!";
-  detailsDiv.appendChild(logoutMessage);
-
-  let finalLogoutBtn = document.createElement("button");
-  finalLogoutBtn.style.color = "red";
-  finalLogoutBtn.innerText = "Logout";
-  detailsDiv.appendChild(finalLogoutBtn);
-
-  finalLogoutBtn.addEventListener("click", function () {
+function userLogout() {
+  if (!localStorage.getItem('user_id')) {
+    return;
+  }
+  if (window.confirm("Are you sure you want to log out?")) {
     localStorage.removeItem("user_id");
-    window.alert("Goodbye");
+    document.querySelector('#logged-in-message').innerText = '';
     clearContainerContents(document.querySelector('#detail'));
-  });
+  }
 }

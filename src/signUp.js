@@ -57,6 +57,7 @@ function creatingUser(newUser) {
     .then((resp) => resp.json())
     .then((user) => {
       localStorage.setItem("user_id", `${user.id}`);
+      document.querySelector('#logged-in-message').innerText = `You are logged in as: ${newUser.email}`;
       window.alert("Welcome to Cocktail Picker");
       clearContainerContents(document.querySelector('#detail'));
     });
