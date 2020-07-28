@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000/api/v1";
+const BASE_URL = 'http://localhost:3000/api/v1';
 const COCKTAILS_LINK = BASE_URL + "/cocktails";
 const COCKTAILS_FIRST_CHAR_ARR = [
   "0",
