@@ -10,7 +10,7 @@ function colorIfFavorite(button, cocktail) {
     })
   }
 
-  fetch(`${BASE_URL}/cocktails/is-favorite`, fetchObj)
+  fetch(`${BASE_URL}/api/v1/cocktails/is-favorite`, fetchObj)
     .then(response => response.json())
     .then(isFavorite => {
       if (isFavorite) {
@@ -42,7 +42,7 @@ function favoriteCocktail(e, cocktail) {
     })
   }
 
-  fetch(`${BASE_URL}/favorites`, fetchObj)
+  fetch(`${BASE_URL}/api/v1/favorites`, fetchObj)
     .then(response => response.json())
     .then(cocktail => {
       updateCocktailEventListeners(cocktail);

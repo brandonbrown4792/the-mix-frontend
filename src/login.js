@@ -47,12 +47,12 @@ function creatingLogin() {
 }
 
 function loginFetch(loginInfo) {
-  fetch("http://localhost:3000/api/v1/login", {
+  fetch(`https://cocktail-picker-api.herokuapp.com/api/v1/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(loginInfo),
+    body: JSON.stringify(loginInfo)
   })
     .then((resp) => resp.json())
     .then((data) => {
@@ -69,6 +69,10 @@ function loginFetch(loginInfo) {
 function logout() {
   let logoutBtn = document.querySelector("#logout");
   logoutBtn.addEventListener("click", function () {
+    if (!localStorage.getItem('user_id')) {
+      alert('Must be logged in to log out');
+      return;
+    }
     userLogout();
   });
 }

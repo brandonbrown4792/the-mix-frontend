@@ -1,4 +1,5 @@
-const BASE_URL = 'http://localhost:3000/api/v1';
+// const BASE_URL = 'http://localhost:3000/api/v1';
+const BASE_URL = 'https://cocktail-picker-api.herokuapp.com'
 const COCKTAILS_LINK = BASE_URL + "/cocktails";
 const COCKTAILS_FIRST_CHAR_ARR = [
   "0",
@@ -72,8 +73,8 @@ function fetchCocktails(e) {
   };
 
   if (e.target.querySelector("#search-option").value == "ingredient")
-    searchUrl = "http://localhost:3000/api/v1/cocktails/search-by-ingredient";
-  else searchUrl = "http://localhost:3000/api/v1/cocktails/search-by-name";
+    searchUrl = `${BASE_URL}/api/v1/cocktails/search-by-ingredient`;
+  else searchUrl = `${BASE_URL}/api/v1/cocktails/search-by-name`;
 
   fetch(`${searchUrl}?q=${searchValue}`, fetchObj)
     .then((response) => response.json())
@@ -102,7 +103,7 @@ function fetchCocktailsByChar(char) {
     method: "POST",
   };
   fetch(
-    `http://localhost:3000/api/v1/cocktails/search-by-char?q=${char}`,
+    `${BASE_URL}/api/v1/cocktails/search-by-char?q=${char}`,
     fetchObj
   )
     .then((response) => response.json())

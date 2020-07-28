@@ -86,7 +86,7 @@ function saveUpdatedCocktail(e, cocktail) {
 
   e.target.reset();
 
-  fetch(`${BASE_URL}/cocktails/${cocktail.id}`, fetchObj)
+  fetch(`${BASE_URL}/api/v1/cocktails/${cocktail.id}`, fetchObj)
     .then(response => response.json())
     .then(cocktail => {
       renderUpdatedCocktail(cocktail)
@@ -119,7 +119,7 @@ function deleteCocktail(cocktail) {
     method: 'DELETE'
   }
 
-  fetch(`${BASE_URL}/cocktails/${cocktail.id}`, fetchObj)
+  fetch(`${BASE_URL}/api/v1/cocktails/${cocktail.id}`, fetchObj)
     .then(response => response.json())
     .then(confirmation => confirmation ? clearContainerContents(document.querySelector('#detail')) : alert('Failed to delete cocktail'))
 }

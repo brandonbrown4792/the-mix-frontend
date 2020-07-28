@@ -9,7 +9,7 @@ function getShowInformation(cocktail) {
     }),
   };
 
-  fetch(`${BASE_URL}/cocktails/get-show-info`, fetchObj)
+  fetch(`${BASE_URL}/api/v1/cocktails/get-show-info`, fetchObj)
     .then((response) => response.json())
     .then((cocktail) => displayCocktailShowPage(cocktail));
 }

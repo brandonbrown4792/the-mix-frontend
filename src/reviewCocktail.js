@@ -17,7 +17,7 @@ function renderReview(container, review) {
     })
   }
 
-  fetch(`${BASE_URL}/reviews/${review.id}/get-user-email`, fetchObj)
+  fetch(`${BASE_URL}/api/v1/reviews/${review.id}/get-user-email`, fetchObj)
     .then(response => response.json())
     .then(user => {
 
@@ -79,7 +79,7 @@ function saveReview(e, cocktail) {
 
   const reviewContainer = document.querySelector('#reviews-container')
 
-  fetch(`${BASE_URL}/reviews`, fetchObj)
+  fetch(`${BASE_URL}/api/v1/reviews`, fetchObj)
     .then(response => response.json())
     .then(data => {
       updateCocktailEventListeners(data.cocktail);
@@ -92,7 +92,7 @@ function deleteReview(e, review) {
     method: 'DELETE'
   }
 
-  fetch(`${BASE_URL}/reviews/${review.id}`, fetchObj)
+  fetch(`${BASE_URL}/api/v1/reviews/${review.id}`, fetchObj)
     .then(response => response.json())
     .then(confirmation => confirmation ? e.target.parentElement.remove() : alert('Failed to delete review'));
 }

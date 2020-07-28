@@ -32,7 +32,7 @@ function creatingAccountInfo() {
 
 function deleteFetch() {
   fetch(
-    `http://localhost:3000/api/v1/users/${localStorage.getItem("user_id")}`,
+    `${BASE_URL}/api/v1/users/${localStorage.getItem("user_id")}`,
     {
       method: "DELETE",
     }
@@ -40,6 +40,7 @@ function deleteFetch() {
     .then((resp) => resp.json())
     .then((resp) => {
       console.log(resp);
+      document.querySelector('#logged-in-message').innerText = '';
       localStorage.clear("user_id");
     });
 }

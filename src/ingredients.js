@@ -120,7 +120,7 @@ function saveIngredient(e, cocktail) {
 
   e.target.reset();
 
-  fetch(`${BASE_URL}/cocktails/${cocktail.id}/add-ingredient`, fetchObj)
+  fetch(`${BASE_URL}/api/v1/cocktails/${cocktail.id}/add-ingredient`, fetchObj)
     .then(response => response.json())
     .then(data => renderNewIngredient(data));
 }
@@ -155,7 +155,7 @@ function deleteCocktailIngredient(e, cocktailIngredient) {
     method: 'DELETE'
   };
 
-  fetch(`${BASE_URL}/cocktail_ingredients/${cocktailIngredient.id}`, fetchObj)
+  fetch(`${BASE_URL}/api/v1/cocktail_ingredients/${cocktailIngredient.id}`, fetchObj)
     .then(response => response.json())
     .then(confirmation => confirmation ? e.target.parentElement.parentElement.remove() : alert('Failed to delete ingredient'));
 }
