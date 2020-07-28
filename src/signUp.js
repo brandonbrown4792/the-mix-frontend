@@ -15,7 +15,7 @@ function createSignUpForm() {
   detailsDiv.innerHTML = "";
 
   let signUpH3 = document.createElement("h3");
-  signUpH3.innerText = "Sign-Up";
+  signUpH3.innerText = "Sign Up";
   detailsDiv.appendChild(signUpH3);
 
   let signUpForm = document.createElement("form");
@@ -29,23 +29,15 @@ function createSignUpForm() {
   signUpInput1.autocomplete = "off";
   signUpForm.appendChild(signUpInput1);
 
-  let signUpInput2 = document.createElement("input");
-  signUpInput2.type = "password";
-  signUpInput2.placeholder = "password";
-  signUpInput2.name = "password";
-  signUpInput2.autocomplete = "off";
-  signUpForm.appendChild(signUpInput2);
-
   let signUpSubmit = document.createElement("input");
   signUpSubmit.type = "submit";
-  signUpSubmit.value = "sign up";
+  signUpSubmit.value = "Sign Up";
   signUpSubmit.innerText = "Submit";
   signUpForm.appendChild(signUpSubmit);
 
   signUpForm.addEventListener("submit", function (e) {
     let newUser = {
-      email: e.target.email.value,
-      password: e.target.password.value,
+      email: e.target.email.value
     };
     e.preventDefault();
 

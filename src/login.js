@@ -30,13 +30,6 @@ function creatingLogin() {
   loginInput1.autocomplete = "off";
   loginForm.appendChild(loginInput1);
 
-  let loginInput2 = document.createElement("input");
-  loginInput2.type = "password";
-  loginInput2.placeholder = "password";
-  loginInput2.name = "password";
-  loginInput2.autocomplete = "off";
-  loginForm.appendChild(loginInput2);
-
   let loginSubmit = document.createElement("input");
   loginSubmit.type = "submit";
   loginSubmit.value = "Login";
@@ -46,8 +39,7 @@ function creatingLogin() {
     e.preventDefault();
 
     let loginInfo = {
-      email: e.target.email.value,
-      password: e.target.password.value,
+      email: e.target.email.value
     };
 
     loginFetch(loginInfo);
