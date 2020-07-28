@@ -349,3 +349,8 @@ button {
   border: none;
   border-radius: 5px;
 }
+
+#logged-in-message {
+  margin: 0px 50px 50px 0px;
+  text-align: right;
+}
