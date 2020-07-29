@@ -22,7 +22,7 @@ function creatingAccountInfo() {
   detailsDiv.appendChild(accountDeleteBtn);
   accountDeleteBtn.addEventListener("click", function () {
     if (localStorage.getItem("user_id") === null) {
-      window.alert("No User Signed in");
+      window.alert('Must be signed in to delete account');
       login();
     } else {
       deleteFetch();
@@ -32,14 +32,14 @@ function creatingAccountInfo() {
 
 function deleteFetch() {
   fetch(
-    `http://localhost:3000/api/v1/users/${localStorage.getItem("user_id")}`,
+    `${BASE_URL}/users/${localStorage.getItem("user_id")}`,
     {
       method: "DELETE",
     }
   )
     .then((resp) => resp.json())
     .then((resp) => {
-      console.log(resp);
+      document.querySelector('#logged-in-message').innerText = '';
       localStorage.clear("user_id");
     });
 }

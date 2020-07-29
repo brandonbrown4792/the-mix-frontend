@@ -12,7 +12,7 @@ function favoritesListener() {
 }
 
 function userFavoritesFetch() {
-  fetch(`http://localhost:3000/api/v1/user/favorites`, {
+  fetch(`${BASE_URL}/user/favorites`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

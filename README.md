@@ -1,1 +1,1 @@
-# cocktail-app-frontend
+# the-mix-frontend
