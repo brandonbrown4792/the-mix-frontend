@@ -6,7 +6,7 @@ The Mix is the perfect place to find your next cocktail. Using an external api t
 This app has been deployed to Heroku [here](https://the-mix.netlify.app/). You may create a new user to browse, create, favorite, or review cocktails.
 
 
-## Install Intructions
+## Install Instructions
 1. Clone this repository to you local machine.
 2. Once cloned, navigate to the base folder of this repository.
 3. Open index.html to view webpage
