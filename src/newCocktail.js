@@ -28,7 +28,7 @@ function newCocktailFetch(formSubmit) {
     body: JSON.stringify(formSubmit),
   }
 
-  fetch("http://localhost:3000/api/v1/cocktails", fetchObj)
+  fetch(`${BASE_URL}/cocktails`, fetchObj)
     .then((resp) => resp.json())
     .then(cocktail => createLoadShowPage(cocktail));
 }

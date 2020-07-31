@@ -47,7 +47,7 @@ function creatingLogin() {
 }
 
 function loginFetch(loginInfo) {
-  fetch("http://localhost:3000/api/v1/login", {
+  fetch(`${BASE_URL}/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -69,6 +69,11 @@ function loginFetch(loginInfo) {
 function logout() {
   let logoutBtn = document.querySelector("#logout");
   logoutBtn.addEventListener("click", function () {
+    if (!localStorage.getItem('user_id')) {
+      alert('Must be logged in to log out')
+      return;
+    }
+
     userLogout();
   });
 }
