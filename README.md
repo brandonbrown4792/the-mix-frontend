@@ -11,7 +11,7 @@ This app has been deployed to Heroku [here](https://the-mix.netlify.app/). You m
 2. Once cloned, navigate to the base folder of this repository.
 3. Open index.html to view webpage
 
-Note: The backend software must be downloaded and running as well to see a user interface. See the backend project [here](https://github.com/hoobie4792/the-mix-backend).
+Note: The backend software must be downloaded and running as well. See the backend project [here](https://github.com/hoobie4792/the-mix-backend).
 
 
 ## Features
